@@ -1,0 +1,236 @@
+body{
+  background:$white;
+}
+
+#content{
+    position: relative;
+}
+//lightbox
+#lightbox {
+    position:fixed; 
+    top:0; 
+    left:0; 
+    width:100%; 
+    height:100%; 
+    background:rgba(0,0,0,0.7); 
+    text-align:center;
+    padding-top:8rem;
+}
+#lightbox img {
+    max-height:72vh;
+    background:$white;
+    padding:1rem;
+}
+
+//fixed sidebar
+aside{
+  @media (#{$bp-larger-than-mobile}){width:100%;position:relative; height:auto; }
+  @media (#{$bp-larger-than-tablet}){width:35%;position:fixed; height: 100%;}
+  @media (#{$bp-larger-than-desktop}){width:20%;}
+  @media (#{$bp-larger-than-desktophd}){width:20%;}
+  top: 0;
+  left: 0;
+  color: $black;
+  box-sizing:border-box;
+  padding: 3.5rem;
+}
+.profile-pic{
+  @include border-radius(50%);
+  margin-bottom: 2rem;
+  padding:0 3rem;
+-webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+    filter: grayscale(100%);
+}
+
+.entry-summary{
+    padding: 0rem;
+    margin: 0;
+    line-height: 0!important;
+    @include fade(0.5s);
+    &:hover{
+        -webkit-filter: brightness(50%);
+  filter: brightness(50%);
+    }
+}
+
+.content{
+  @media (#{$bp-larger-than-mobile}){width:100%;margin:0;}
+  @media (#{$bp-larger-than-tablet}){width:65%;margin:0 35%;}
+  @media (#{$bp-larger-than-desktop}){width:80%;margin:0 20%;}
+  @media (#{$bp-larger-than-desktophd}){width:80%;margin:0 20%;}
+  figure{
+    @media (#{$bp-larger-than-mobile}){width: 100%;}
+    @media (#{$bp-larger-than-desktop}){width: 33.333%;}
+    display: inline-block;
+    margin: 0;
+    float: left;
+    margin-bottom: 0; 
+    padding:0;
+    position:relative;
+    img{
+      vertical-align: top;
+    }
+    figcaption{
+      @include fade(0.3s);
+      position: absolute;
+      top:0;
+      width: 100%;
+      height: 100%;
+      display: block;
+      background:rgba(0,0,0,0.7);
+      opacity: 0;
+      text-align: center;
+      .title{
+        font-size: 1.4rem;
+        color: $white;
+        position: relative;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+      &:hover{
+        opacity: 1;
+      }
+    }
+  }
+}
+
+.post{max-width:1280px;
+    &__text{padding-left: 5rem; margin-top: 3rem;}
+    article{
+        float:left;
+        @media (#{$bp-larger-than-mobile}){padding:3rem;}
+        @media (#{$bp-larger-than-tablet}){padding:0 5rem 0 0;}
+        margin-bottom: 5rem;
+        }
+    
+    .social-shares{
+        padding:0;
+        margin-right: 4%;
+        list-style: none;
+        li {
+            width: 40px;
+            display: inline-block;
+            margin-right: 1rem;}
+        }
+    &__tags a {
+    color: rgba(35,31,32,.8);
+    font-size: 1.35rem;
+    border-bottom: 1px solid #fffef9;
+    white-space: nowrap;
+}
+}
+
+.socials{
+  @media (#{$bp-larger-than-mobile}){position:relative; left:10%;  bottom:0;}
+  @media (#{$bp-larger-than-tablet}){margin-left:0;position:absolute;left:2rem;}
+  
+  bottom:4rem;
+  margin: 0;
+  li{
+    display: inline-block;
+    width:25px;
+    margin: 3rem 0.8rem;
+    img{
+      width:100%;
+      opacity: 0.7;
+      &:hover ,a:hover{
+        opacity: 1;
+        border-bottom:none;
+      }
+    }
+  }
+}
+
+
+#nav-below{
+    margin-bottom: 9rem;
+    @media (#{$bp-larger-than-mobile}){margin-left:3rem; margin-right:3rem;}
+    @media (#{$bp-larger-than-tablet}){margin-left:0rem; margin-right:0rem;}
+}
+.nav-next, .nav-previous{
+    a{
+    background: $black;
+    padding: 0.8rem;
+    color: white;
+    border: 2px solid $black;
+    margin-bottom: 4%;
+    display: inline-block;
+    box-sizing: border-box;
+    @include fade(0.3s);
+        &:hover{
+            color:$black;
+            background:none;
+        }
+    }
+}
+
+
+.center_me{
+    @media (#{$bp-larger-than-mobile}){
+    position: relative;
+    top: 0;
+    transform: translateY();
+    }
+    @media (#{$bp-larger-than-desktop}){
+    position: relative;
+    top: 40%;
+    transform: translateY(-40%);
+    }
+}
+
+.overlay{
+position: absolute;
+    background-color: $highlight;
+    color: white;
+    padding: 1rem;
+    font-weight: 700;
+    left: 1rem;
+    top: 1rem;
+}
+
+.size-full{
+    width:100%;
+    height: auto;
+}
+
+
+
+.menu{
+    list-style: none;
+    font-size: 1.5rem;
+    margin: 0;
+    padding: 0;
+    li{
+        margin:0;
+        padding:0;
+        a{
+            color:$black;
+            &:hover{color:$highlight;}
+        }
+    }
+    &> li.current-menu-item > a {
+        color:$highlight;
+}
+}
+
+
+.splash{
+    width:100%; height:100vh; 
+    @include fade(0.5s);
+    
+}
+
+.no-feat{
+    margin-top: 3rem;
+}
+
+/* Clearing
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+/* Self Clearing Goodness */
+.container:after,
+.row:after,
+.u-cf {
+  content: "";
+  display: table;
+  clear: both; }
