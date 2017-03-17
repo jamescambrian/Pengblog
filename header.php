@@ -36,8 +36,7 @@
    
 
     <div class="">
-<!--   <a href="<?php echo site_url(); ?>"> <img class="u-full-width" style="padding:4rem;" src="<?php echo get_stylesheet_directory_uri(); ?>/images/logo.png"></a>-->
-        <h3>A GUY CALLED JAMES</h3>
+        <a class="no_colour" href="<?php echo site_url(); ?>"><h3>A GUY CALLED JAMES</h3></a>
          <?php wp_nav_menu( array( 'theme_location' => 'main-menu' ) ); ?>
     </div>
     </aside>

@@ -77,7 +77,8 @@ aside{
       opacity: 0;
       text-align: center;
       .title{
-        font-size: 1.8rem;
+        @media (#{$bp-larger-than-mobile}){font-size: 1.4rem;}  
+        @media (#{$bp-larger-than-desktop}){font-size: 1.8rem;} 
         color: $white;
         position: relative;
         top: 50%;
@@ -94,7 +95,7 @@ aside{
     &__text{padding-left: 5rem; margin-top: 3rem;}
     article{
         float:left;
-        @media (#{$bp-larger-than-mobile}){padding:3rem;}
+        @media (#{$bp-larger-than-mobile}){padding:0 3rem;}
         @media (#{$bp-larger-than-tablet}){padding:0 5rem 0 0;}
         margin-bottom: 5rem;
         }
@@ -139,17 +140,22 @@ aside{
 
 
 #nav-below{
-    margin-bottom: 9rem;
-    @media (#{$bp-larger-than-mobile}){margin-left:3rem; margin-right:3rem;}
+    padding: 2rem 1rem;
+    box-sizing: border-box;
+    float:left;
+    background: $highlight;
+    width: 100%;
+    @media (#{$bp-larger-than-mobile}){margin-left:0rem; margin-right:3rem;}
     @media (#{$bp-larger-than-tablet}){margin-left:0rem; margin-right:0rem;}
 }
+.nav-next{float:right;}
+.nav-previous{float:left;}
 .nav-next, .nav-previous{
     a{
-    background: $black;
-    padding: 0.8rem;
+    font-size: 1.8rem;
+    font-weight: 900;
+    padding: 1rem;
     color: white;
-    border: 2px solid $black;
-    margin-bottom: 4%;
     display: inline-block;
     box-sizing: border-box;
     @include fade(0.3s);
@@ -188,6 +194,7 @@ position: absolute;
 .size-full{
     width:100%;
     height: auto;
+    margin-bottom: 2rem;
 }
 
 
@@ -202,17 +209,20 @@ position: absolute;
         padding:0;
         a{
             color:$black;
+            @include fade(0.3s);
             &:hover{color:$highlight;}
         }
     }
     &> li.current-menu-item > a {
         color:$highlight;
+//        padding-left: 0.5rem;
 }
 }
 
 
 .splash{
-    width:100%; height:100vh; 
+    @media (#{$bp-larger-than-mobile}){width:100%; height:50vh;}
+    @media (#{$bp-larger-than-desktop}){width:100%; height:100vh;}
     @include fade(0.3s);
     span{
         display: block;
@@ -238,7 +248,9 @@ position: absolute;
 }
 
 .no-feat{
-    margin-top: 3rem;
+    @media (#{$bp-larger-than-mobile}){margin-top: 0rem;}
+    @media (#{$bp-larger-than-desktop}){margin-top: 3rem;}
+    
 }
 
 

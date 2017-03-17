@@ -15,10 +15,10 @@ p {
     font-family: $font-para;
     font-weight: 400;
     letter-spacing: 0.01rem;
-    line-height:1.3rem;
-    @media (#{$bp-larger-than-mobile}) {font-size: 1.7rem; word-spacing: 0.15rem;@include fade(0.5s);}
-    @media (#{$bp-larger-than-desktop}) {font-size: 1.5rem; word-spacing: 0.1rem; line-height: 2.5rem; @include fade(0.5s);}
-    @media (#{$bp-larger-than-desktophd}) {font-size: 1.5rem; word-spacing: 0.15rem; line-height: 2.5rem;}
+    line-height: 2.5rem; 
+    @media (#{$bp-larger-than-mobile}) {font-size: 1.5rem; word-spacing: 0.15rem;@include fade(0.5s);}
+    @media (#{$bp-larger-than-desktop}) {font-size: 1.5rem; word-spacing: 0.1rem; @include fade(0.5s);}
+    @media (#{$bp-larger-than-desktophd}) {font-size: 1.5rem; word-spacing: 0.15rem; }
 }
 
 /* Links
@@ -32,4 +32,12 @@ a:hover {
 :focus{
   background-color: transparent;
   outline:none;
+}
+
+a.no_colour{
+    color:$black;
+    @include fade(0.5s);
+    h3{font-size: 1.9rem;}
+    &:hover{color:$highlight;}
+
 }
