@@ -2,8 +2,8 @@
     
     <article>
         <div class="twelve columns">
-            <?php the_title('<h2 class="no-feat">', '</h2>'); ?>
-            <?php the_content(); ?>
+<!--            <?php the_title('<h2 class="no-feat">', '</h2>'); ?>-->
+            <?php the_content(); ?><?php include("post-shares.php"); ?>
             <?php if ( !is_search() ) get_template_part( 'entry-footer' ); ?>
         </div>
     </article>    

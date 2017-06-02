@@ -1,6 +1,7 @@
 <?php get_header(); ?>
 <section id="content" role="main">
 <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+<div class="post">
 <article id="post-<?php the_ID(); ?>" <?php post_class('eight columns'); ?>>
 <header class="header">
 <h2 class="no-feat"><?php the_title(); ?></h2> <?php edit_post_link(); ?>
@@ -11,6 +12,7 @@
 <div class="entry-links"><?php wp_link_pages(); ?></div>
 </section>
 </article>
+    </div>
 <?php endwhile; endif; ?>
 </section>
 

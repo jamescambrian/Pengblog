@@ -26,7 +26,7 @@ body{
 aside{
   @media (#{$bp-larger-than-mobile}){width:100%;position:relative; height:auto; }
   @media (#{$bp-larger-than-tablet}){width:35%;position:fixed; height: 100%;}
-  @media (#{$bp-larger-than-desktop}){width:20%;}
+  @media (#{$bp-larger-than-desktop}){width:25%;}
   @media (#{$bp-larger-than-desktophd}){width:20%;}
   top: 0;
   left: 0;
@@ -52,7 +52,7 @@ aside{
 .content{
   @media (#{$bp-larger-than-mobile}){width:100%;margin:0;}
   @media (#{$bp-larger-than-tablet}){width:65%;margin:0 35%;}
-  @media (#{$bp-larger-than-desktop}){width:80%;margin:0 20%;}
+  @media (#{$bp-larger-than-desktop}){width:75%;margin:0 25%;}
   @media (#{$bp-larger-than-desktophd}){width:80%;margin:0 20%;}
   figure{
     @media (#{$bp-larger-than-mobile}){width: 100%;}
@@ -76,12 +76,15 @@ aside{
       background:$highlight;
       opacity: 0;
       text-align: center;
+      line-height: normal;
+        
       .title{
         @media (#{$bp-larger-than-mobile}){font-size: 1.4rem;}  
         @media (#{$bp-larger-than-desktop}){font-size: 1.8rem;} 
         color: $white;
         position: relative;
         top: 50%;
+        padding:0 1rem;
         transform: translateY(-50%);
       }
       &:hover{
@@ -147,6 +150,10 @@ aside{
     width: 100%;
     @media (#{$bp-larger-than-mobile}){margin-left:0rem; margin-right:3rem;}
     @media (#{$bp-larger-than-tablet}){margin-left:0rem; margin-right:0rem;}
+    &.single{background: none; 
+        a{color:$black;
+            &:hover{color: $highlight;}}
+    }
 }
 .nav-next{float:right;}
 .nav-previous{float:left;}
@@ -192,7 +199,8 @@ position: absolute;
 }
 
 .size-full{
-    width:100%;
+    max-width:100%;
+    width:auto;
     height: auto;
     margin-bottom: 2rem;
 }
@@ -201,11 +209,13 @@ position: absolute;
 
 .menu{
     list-style: none;
-    font-size: 1.5rem;
+    font-size: 1.75rem;
+    text-transform: Capitalize;
     margin: 0;
     padding: 0;
     li{
         margin:0;
+        border-bottom: 1px solid $black;
         padding:0;
         a{
             color:$black;
@@ -214,9 +224,14 @@ position: absolute;
         }
     }
     &> li.current-menu-item > a {
-        color:$highlight;
-//        padding-left: 0.5rem;
+        background-color:$highlight;
+        padding: 0.5rem;
+        color: $white;
+        font-weight: 700;
 }
+    &--space{
+        margin-top:5rem;
+    }    
 }
 
 
@@ -248,8 +263,9 @@ position: absolute;
 }
 
 .no-feat{
+    font-size: 1.8rem;
     @media (#{$bp-larger-than-mobile}){margin-top: 0rem;}
-    @media (#{$bp-larger-than-desktop}){margin-top: 3rem;}
+    @media (#{$bp-larger-than-desktop}){margin-top: 3.5rem;}
     
 }
 

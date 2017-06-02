@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width" />
 <link rel="stylesheet" type="text/css" href="<?php echo get_stylesheet_uri(); ?>" />
 <?php wp_head(); ?>
-    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="icon" type="image/png" href="<?php echo get_stylesheet_uri(); ?>/favicon.png">
 </head>
 <body <?php body_class(); ?>>
 <!--SDK Facebook-->
@@ -35,10 +35,13 @@
 <aside class="enter1">
    
 
-    <div class="">
-        <a class="no_colour" href="<?php echo site_url(); ?>"><h3>A GUY CALLED JAMES</h3></a>
-         <?php wp_nav_menu( array( 'theme_location' => 'main-menu' ) ); ?>
-    </div>
+
+        
+
+        <a class="no_colour" href="<?php echo site_url(); ?>"><img style="" class="u-full-width" src="<?php echo get_template_directory_uri(); ?>/images/penghead.png"/></a><br>
+    <p><?php echo get_bloginfo( 'description' ); ?></p>
+    <div class="menu--space"><h2>Browse the Archives</h2><ul class="menu"><?php wp_get_archives('type=yearly'); ?></ul>
+    <?php wp_nav_menu( array( 'theme_location' => 'main-menu' ) ); ?></div>
     </aside>
     <!-- Begin Content -->
 	<div class="content enter2">
